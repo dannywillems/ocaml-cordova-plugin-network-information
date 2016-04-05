@@ -1,3 +1,4 @@
+(* -------------------------------------------------------------------------- *)
 type connection =
   | Unknown [@js "unknown"]
   | Ethernet [@js "ethernet"]
@@ -9,15 +10,24 @@ type connection =
   | None [@js "none"]
   [@@js.enum]
 
-class network_information : Ojs.t ->
-  object
-    inherit Ojs.obj
+[@@@js.stop]
+val connection_to_str : connection -> string
+[@@@js.start]
 
-    method type_ : connection
-    [@@js.get "type"]
-  end
+[@@@js.implem
+let connection_to_str c = match c with
+  | Unknown     -> "unknown"
+  | Ethernet    -> "ethernet"
+  | Wifi        -> "wifi"
+  | Cell_2G     -> "2g"
+  | Cell_3G     -> "3g"
+  | Cell_4G     -> "4g"
+  | Cell        -> "cellular"
+  | None        -> "none"
+]
+(* -------------------------------------------------------------------------- *)
 
 (* -------------------------------------------------------------------------- *)
-val t : unit -> network_information
-[@@js.get "navigator.connection"]
+val current : unit -> connection
+[@@js.get "navigator.connection.type"]
 (* -------------------------------------------------------------------------- *)

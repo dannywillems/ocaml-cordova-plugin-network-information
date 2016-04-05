@@ -5,7 +5,6 @@ Binding to
 
 [Example
 application](https://github.com/dannywillems/ocaml-cordova-plugin-network-information-example).
-**Not developed**
 
 ## What does cordova-plugin-network-information do ?
 
@@ -23,7 +22,12 @@ Only gen_js_api version is developed.
 
 ## How to use ?
 
-TODO
+You can access to the connection type using *Network_information.current ()*
+(the unit parameter is mandatory because NetworkInformation javascript object is
+initialised when the device ready event is launched).
+
+It returns a value of type *Network_information.connection* and you can get the string
+representation with *Network_information.connect_to_str* function.
 
 ## To-do
 
