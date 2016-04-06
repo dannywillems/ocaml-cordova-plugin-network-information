@@ -1,5 +1,7 @@
 # ocaml-cordova-plugin-network-information
 
+* gen_js_api (master branch): [![Build Status](https://travis-ci.org/dannywillems/ocaml-cordova-plugin-network-information.svg?branch=master)](https://travis-ci.org/dannywillems/ocaml-cordova-plugin-network-information)
+
 Binding to
 [cordova-plugin-network-information](https://github.com/apache/cordova-plugin-network-information).
 
