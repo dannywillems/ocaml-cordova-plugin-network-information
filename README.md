@@ -22,14 +22,36 @@ Source: [cordova-plugin-network-information](https://github.com/apache/cordova-p
 
 Only gen_js_api version is developed.
 
+## How to install and compile your project by using this plugin ?
+
+Don't forget to switch to a compiler **>= 4.03.0**.
+```Shell
+opam switch 4.03.0+beta1
+```
+
+You can use opam by pinning the repository with
+```Shell
+opam pin add cordova-plugin-network-information https://github.com/dannywillems/ocaml-cordova-plugin-network-information.git
+```
+
+and to compile your project, use
+```Shell
+ocamlfind ocamlc -c -o [output_file] -package gen_js_api -package cordova-plugin-network-information [...] -linkpkg [other arguments]
+```
+
+Don't forget to install the cordova plugin network information with
+```Shell
+cordova plugin add cordova-plugin-network-information
+```
+
 ## How to use ?
 
-You can access to the connection type using *Network_information.current ()*
+You can access to the connection type using *Cordova_network_information.current ()*
 (the unit parameter is mandatory because NetworkInformation javascript object is
 initialised when the device ready event is launched).
 
-It returns a value of type *Network_information.connection* and you can get the string
-representation with *Network_information.connect_to_str* function.
+It returns a value of type *Cordova_network_information.connection* and you can get the string
+representation with *Cordova_network_information.connect_to_str* function.
 
 ## To-do
 
