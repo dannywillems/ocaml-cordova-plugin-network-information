@@ -1,8 +1,4 @@
-################################################################################
-MLI_FILE		= cordova_network_information.mli
-## Name which will be used in -package with ocamlfind
-LIB_NAME		= cordova-plugin-network-information
-################################################################################
+include Makefile.conf
 
 ################################################################################
 CC				= ocamlc
